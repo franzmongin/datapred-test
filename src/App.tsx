@@ -53,7 +53,6 @@ const App: React.FunctionComponent = () => {
 
       // check if there is a run for the date specified
       if (!runRes.ok) {
-        console.log(runRes);
         setRunsError("no run avaible for this date");
         return;
       }
@@ -82,7 +81,6 @@ const App: React.FunctionComponent = () => {
             { headers: auth }
           )
         ).json();
-        console.log(outputTrends);
         setTrends(outputTrends.results);
       });
     };
@@ -108,7 +106,6 @@ const App: React.FunctionComponent = () => {
             label="Production date"
             value={value}
             onChange={(newValue) => {
-              console.log(newValue);
               setValue(newValue);
             }}
             renderInput={(params) => <TextField {...params} />}
